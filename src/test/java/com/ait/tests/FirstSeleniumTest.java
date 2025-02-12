@@ -65,7 +65,7 @@ public class FirstSeleniumTest {
     }
 
     //after - tearDown
-    @AfterMethod(enabled = true) // отключает работу метода
+    @AfterMethod(enabled = false) // отключает работу метода
     public void tearDown() {
         driver.quit(); // all tabs & close browser
         // driver.close(); // only one tab(if tab only one -> browser)
@@ -129,6 +129,7 @@ public class FirstSeleniumTest {
         driver.findElement(By.cssSelector(".title:nth-child(2)"));
         driver.findElement(By.cssSelector(".description:nth-child(1)"));
         driver.findElement(By.cssSelector(".top-cities>a:nth-child(1)"));
+
 
 
     }

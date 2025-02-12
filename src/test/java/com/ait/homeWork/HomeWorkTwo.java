@@ -81,7 +81,25 @@ public void   findElementsByTagName(){
         driver.findElement(By.className("inactive"));
 
     }
+    // lesson Nr:13 Task2
+    // В домашнем тестовом классе
+    // создайте, пожалуйста, тестовый метод,
+    // где вы найдете 10 элементов,
+    // используя стратегию By.cssSelector на странице
 
+    @Test
+    public void findElementByCssSelectorH(){
+        driver.findElement(By.cssSelector("a"));
+        driver.findElement(By.cssSelector("[href^='/electronics']"));
+        driver.findElement(By.cssSelector("[type='text']"));
+        driver.findElement(By.cssSelector(".ico-register:nth-child(1)"));
+        driver.findElement(By.cssSelector("[href='/digital-downloads']"));
+        driver.findElement(By.cssSelector("[type='button']"));
+        driver.findElement(By.cssSelector("[for='pollanswers-4']"));
+        driver.findElement(By.cssSelector(".title:nth-child(1)"));
+        driver.findElement(By.cssSelector("[href$='/books']"));
+        driver.findElement(By.cssSelector("#newsletter-email[type='text']"));
+    }
     @AfterMethod
     public void tearDown(){
         driver.quit();
