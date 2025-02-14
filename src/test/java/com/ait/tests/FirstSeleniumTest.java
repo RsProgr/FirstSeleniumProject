@@ -131,6 +131,43 @@ public class FirstSeleniumTest {
         driver.findElement(By.cssSelector(".top-cities>a:nth-child(1)"));
 
 
+        }
+    @Test
+    public void findElementByXpath(){
+        // xpath-> //*[@key='value']
+        // driver.findElement(By.cssSelector("h1"));
+        driver.findElement((By.xpath("//h1")));
+        // driver.findElement(By.cssSelector("#city"));
+        driver.findElement(By.xpath("//*[@id='city']"));
+        //driver.findElement(By.cssSelector(".header"));
+        driver.findElement(By.xpath("//*[@class='header']"));
+
+        driver.findElement(By.xpath("//*[@type='submit']"));
+
+        driver.findElement(By.xpath("//*[@href='/search']"));
+        driver.findElement(By.xpath("//*[@href='/search']"));
+
+        //contains text
+        driver.findElement(By.xpath("//*[contains(.,'Find your')]"));
+        driver.findElement(By.xpath("//*[text()='Find your car now!']"));
+        driver.findElement(By.xpath("//*[.='Find your car now!']"));
+
+        //contains
+        driver.findElement(By.xpath("//*[contains(@href,'results?')]"));
+        //starts with
+        driver.findElement(By.xpath("//*[starts-with(@href,'/let')]"));
+
+        //parent
+        driver.findElement(By.xpath("//h1/.."));
+        driver.findElement(By.xpath("//h1/parent::*"));
+        driver.findElement(By.xpath("//h1/parent::div"));
+
+        //ancestor
+        driver.findElement(By.xpath("//h1/ancestor::*"));      // first ancestor
+        driver.findElement(By.xpath("//h1/ancestor::div"));    //two steps below
+        driver.findElement(By.xpath("//h1/ancestor::div[2]")); //one step below
 
     }
+
+
 }

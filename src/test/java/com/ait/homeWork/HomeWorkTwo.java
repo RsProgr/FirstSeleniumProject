@@ -100,6 +100,29 @@ public void   findElementsByTagName(){
         driver.findElement(By.cssSelector("[href$='/books']"));
         driver.findElement(By.cssSelector("#newsletter-email[type='text']"));
     }
+
+
+// Lesson Nr:14 Task2
+// В домашнем тестовом классе создайте, пожалуйста,
+// тестовый метод, где будут найдены 10 элементов,
+// используя стратегию By.xpath на странице
+    @Test
+    public void findElementByXpathH(){
+driver.findElement(By.xpath("//a"));
+driver.findElement(By.xpath("//*[@id='small-searchterms']"));
+driver.findElement(By.xpath("//*[@class='listbox']"));
+driver.findElement(By.xpath("//*[@href='/build-your-cheap-own-computer']"));
+driver.findElement(By.xpath("//*[@value='Vote']"));
+driver.findElement(By.xpath("//*[contains(.,'Welcome to')]"));
+driver.findElement(By.xpath("//*[@href='/gift-cards']"));
+driver.findElement(By.xpath("//*[@href='https://academy.tricentis.com']"));
+driver.findElement(By.xpath("//*[@for='pollanswers-1']"));
+driver.findElement(By.xpath("//a/.."));
+    }
+
+
+
+
     @AfterMethod
     public void tearDown(){
         driver.quit();
