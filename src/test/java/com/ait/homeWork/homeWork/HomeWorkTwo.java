@@ -15,11 +15,11 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class HomeWorkTwo{
+public class HomeWorkTwo {
     WebDriver driver;
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         driver = new ChromeDriver();
         driver.get("https://demowebshop.tricentis.com/");
 
@@ -28,7 +28,7 @@ public class HomeWorkTwo{
 
 
     @Test
-public void   findElementsByTagName(){
+    public void findElementsByTagName() {
 
 
         driver.findElement(By.tagName("a"));
@@ -53,7 +53,7 @@ public void   findElementsByTagName(){
     }
 
     @Test
-    public void findElementById(){
+    public void findElementById() {
         driver.findElement(By.id("small-searchterms"));
         driver.findElement(By.id("pollanswers-1"));
         driver.findElement(By.id("pollanswers-2"));
@@ -67,14 +67,15 @@ public void   findElementsByTagName(){
 
 
     }
+
     @Test
-    public void findElementByClassName(){
-       driver.findElement(By.className("nivo-imageLink"));
-       driver.findElement(By.className("nivo-nextNav"));
-       driver.findElement(By.className("nivo-prevNav"));
-       driver.findElement(By.className("ico-register"));
-       driver.findElement(By.className("ico-login"));
-       driver.findElement(By.className("cart-label"));
+    public void findElementByClassName() {
+        driver.findElement(By.className("nivo-imageLink"));
+        driver.findElement(By.className("nivo-nextNav"));
+        driver.findElement(By.className("nivo-prevNav"));
+        driver.findElement(By.className("ico-register"));
+        driver.findElement(By.className("ico-login"));
+        driver.findElement(By.className("cart-label"));
         driver.findElement(By.className("ico-wishlist"));
         driver.findElement(By.className("top-menu-triangle"));
         driver.findElement(By.className("sublist"));
@@ -88,7 +89,7 @@ public void   findElementsByTagName(){
     // используя стратегию By.cssSelector на странице
 
     @Test
-    public void findElementByCssSelectorH(){
+    public void findElementByCssSelectorH() {
         driver.findElement(By.cssSelector("a"));
         driver.findElement(By.cssSelector("[href^='/electronics']"));
         driver.findElement(By.cssSelector("[type='text']"));
@@ -102,29 +103,27 @@ public void   findElementsByTagName(){
     }
 
 
-// Lesson Nr:14 Task2
+    // Lesson Nr:14 Task2
 // В домашнем тестовом классе создайте, пожалуйста,
 // тестовый метод, где будут найдены 10 элементов,
 // используя стратегию By.xpath на странице
     @Test
-    public void findElementByXpathH(){
-driver.findElement(By.xpath("//a"));
-driver.findElement(By.xpath("//*[@id='small-searchterms']"));
-driver.findElement(By.xpath("//*[@class='listbox']"));
-driver.findElement(By.xpath("//*[@href='/build-your-cheap-own-computer']"));
-driver.findElement(By.xpath("//*[@value='Vote']"));
-driver.findElement(By.xpath("//*[contains(.,'Welcome to')]"));
-driver.findElement(By.xpath("//*[@href='/gift-cards']"));
-driver.findElement(By.xpath("//*[@href='https://academy.tricentis.com']"));
-driver.findElement(By.xpath("//*[@for='pollanswers-1']"));
-driver.findElement(By.xpath("//a/.."));
+    public void findElementByXpathH() {
+        driver.findElement(By.xpath("//a"));
+        driver.findElement(By.xpath("//*[@id='small-searchterms']"));
+        driver.findElement(By.xpath("//*[@class='listbox']"));
+        driver.findElement(By.xpath("//*[@href='/build-your-cheap-own-computer']"));
+        driver.findElement(By.xpath("//*[@value='Vote']"));
+        driver.findElement(By.xpath("//*[contains(.,'Welcome to')]"));
+        driver.findElement(By.xpath("//*[@href='/gift-cards']"));
+        driver.findElement(By.xpath("//*[@href='https://academy.tricentis.com']"));
+        driver.findElement(By.xpath("//*[@for='pollanswers-1']"));
+        driver.findElement(By.xpath("//a/.."));
     }
 
 
-
-
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
-}
+    }
 }

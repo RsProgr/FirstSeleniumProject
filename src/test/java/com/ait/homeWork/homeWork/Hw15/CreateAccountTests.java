@@ -1,6 +1,7 @@
 package com.ait.homeWork.homeWork.Hw15;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CreateAccountTests extends TestBase {
@@ -29,16 +30,6 @@ public class CreateAccountTests extends TestBase {
         click(By.name("register-button"));
 
         // Assert register complete
-        driver.findElement(By.xpath("//*[@type='button']"));
-    }
-
-    public void type(By locator, String text) {
-        click(locator);
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
-    }
-
-    public void click(By locator) {
-        driver.findElement(locator).click();
+        Assert.assertEquals(isElementPresent(By.xpath("//*[@type='button']")), true, "Registration failed!");
     }
 }

@@ -4,23 +4,15 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTests extends TestBase{
+public class LoginTests extends TestBase {
     @Test
-    public void loginPositiveTest(){
-        //click on log in
-        driver.findElement(By.cssSelector("[href='/login']")).click();
-        //enter Email
-        driver.findElement(By.name("Email")).click();
-        driver.findElement(By.name("Email")).clear();
-        driver.findElement(By.name("Email")).sendKeys("xor19@list.ru");
-        //enter password
-        driver.findElement(By.name("Password")).click();
-        driver.findElement(By.name("Password")).clear();
-        driver.findElement(By.name("Password")).sendKeys("Qwerty12345!");
-        //click login
-        driver.findElement(By.xpath("//*[@class='button-1 login-button']")).click();
-        //Assert sign Out button present
-       Assert.assertTrue(isElementPresent(By.xpath("//*[.='Log out']")));
+    public void loginPositiveTest() {
 
+        click(By.cssSelector("[href='/login']"));
+        type(By.name("Email"), "xor19@list.ru");
+        type(By.name("Password"), "Qwerty12345!");
+        click(By.xpath("//input[@class='button-1 login-button']"));
+
+        Assert.assertTrue(isElementPresent(By.cssSelector("[href='/logout']")), "Logout button is missing, login might have failed!");
     }
 }
