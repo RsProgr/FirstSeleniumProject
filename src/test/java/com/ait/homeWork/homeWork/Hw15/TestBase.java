@@ -37,4 +37,17 @@ public class TestBase {
     public void click(By locator) {
         driver.findElement(locator).click();
     }
+    public void clearCart() {
+        click(By.cssSelector(".cart-label")); // Открываем корзину
+        if (isElementPresent(By.name("removefromcart"))) {
+            click(By.name("removefromcart")); // Удаляем товар
+            click(By.name("updatecart")); // Обновляем корзину
+        }
+    }
+    public void login() {
+        click(By.cssSelector("[href='/login']"));
+        type(By.name("Email"), "xor19@list.ru");
+        type(By.name("Password"), "Qwerty12345!");
+        click(By.xpath("//*[@class='button-1 login-button']"));
+    }
 }

@@ -15,8 +15,9 @@ public class AddItemToCartTests extends TestBase {
 
     @BeforeMethod
     public void precondition() {
-        login(); // Логинимся перед каждым тестом
+        login();
     }
+
     @Test
     public void addItemToCartTest() {
         click(By.cssSelector("img[src='https://demowebshop.tricentis.com/content/images/thumbs/0000224_141-inch-laptop_125.png']"));
@@ -39,17 +40,11 @@ public class AddItemToCartTests extends TestBase {
 
     @AfterMethod(enabled = false)
     public void postcondition() {
-        click(By.cssSelector("[href='/cart']"));
-        if (isElementPresent(By.name("removefromcart"))) {
-            click(By.name("removefromcart"));
-            click(By.name("updatecart"));
-        }
+        clearCart();
     }
 
-    private void login() {
-        click(By.cssSelector("[href='/login']"));
-        type(By.name("Email"), "xor19@list.ru");
-        type(By.name("Password"), "Qwerty12345!");
-        click(By.xpath("//*[@class='button-1 login-button']"));
-    }
+
+   
+
+
 }
