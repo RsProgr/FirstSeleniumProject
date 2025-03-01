@@ -6,14 +6,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class AddItemToCartTests extends TestBase {
+
+    @BeforeMethod
+    public void precondition() {
+        login(); // Логинимся перед каждым тестом
+    }
     @Test
     public void addItemToCartTest() {
-        login();
         click(By.cssSelector("img[src='https://demowebshop.tricentis.com/content/images/thumbs/0000224_141-inch-laptop_125.png']"));
         click(By.cssSelector("#add-to-cart-button-31"));
         Assert.assertEquals(isElementPresent(By.cssSelector(".cart-qty")), true);
@@ -21,7 +26,6 @@ public class AddItemToCartTests extends TestBase {
 
     @Test
     public void removeProductFromCart() {
-        login();
         click(By.cssSelector(".cart-label"));
         click(By.cssSelector("[type=checkbox]"));
         click(By.cssSelector("[name='updatecart']"));
@@ -34,7 +38,7 @@ public class AddItemToCartTests extends TestBase {
     }
 
     @AfterMethod(enabled = false)
-    public void clearCart() {
+    public void postcondition() {
         click(By.cssSelector("[href='/cart']"));
         if (isElementPresent(By.name("removefromcart"))) {
             click(By.name("removefromcart"));
