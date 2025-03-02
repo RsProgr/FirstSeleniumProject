@@ -16,38 +16,47 @@ public class TestBase {
     WebDriver driver;
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         driver = new ChromeDriver();
         driver.get("https://demowebshop.tricentis.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-    @AfterMethod(enabled = false)
-    public void tearDown(){
-        driver.quit();
+
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
-    public boolean isHomeComponentPresent(){
+
+    public boolean isHomeComponentPresent() {
         return isElementPresent(By.xpath("//*[@class='topic-html-content-header']"));
     }
-    public boolean isElementPresent(By locator){
-        return driver.findElements(locator).size()>0;
+
+    public boolean isElementPresent(By locator) {
+        return !driver.findElements(locator).isEmpty(); // Оптимизировано
     }
+
     public void type(By locator, String text) {
-        click(locator);
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
+        if (text != null && !text.isEmpty()) { // Проверка на пустую строку
+            click(locator);
+            WebElement element = driver.findElement(locator);
+            element.clear();
+            element.sendKeys(text);
+        }
     }
 
     public void click(By locator) {
         driver.findElement(locator).click();
     }
+
     public void clearCart() {
         click(By.cssSelector(".cart-label")); // Открываем корзину
-        if (isElementPresent(By.name("removefromcart"))) {
-            click(By.name("removefromcart")); // Удаляем товар
-            click(By.name("updatecart")); // Обновляем корзину
-        }
+
+
     }
+
     public void login() {
         click(By.cssSelector("[href='/login']"));
         type(By.name("Email"), "xor19@list.ru");
@@ -55,19 +64,16 @@ public class TestBase {
         click(By.xpath("//*[@class='button-1 login-button']"));
     }
 
-    public void isSignUpButtonPresent() {
-        Assert.assertEquals(isElementPresent(By.xpath("//*[@type='button']")), true, "Registration failed!");
+    public boolean isSignUpButtonPresent() {
+        return isElementPresent(By.xpath("//*[@type='button']"));
     }
 
-    public void fillRegistrationLoginForm(String firstName, String lastName, String email, String password, String confirmPassword) {
-
-        type(By.name("FirstName"), firstName);
-        type(By.name("LastName"), lastName);
-        type(By.name("Email"), email);
-        type(By.name("Password"), password);
-        type(By.name("ConfirmPassword"), confirmPassword);
-
-        clickOnRegistrationButton();
+    public void fillRegistrationLoginForm(User user) {
+        type(By.name("FirstName"), user.getFirstName());
+        type(By.name("LastName"), user.getLastName());
+        type(By.name("Email"), user.getEmail());
+        type(By.name("Password"), user.getPassword());
+        type(By.name("ConfirmPassword"), user.getConfirmPassword());
     }
 
     public void clickOnRegistrationButton() {
@@ -78,8 +84,8 @@ public class TestBase {
         click(By.cssSelector("[href='/register']"));
     }
 
-    public void isSignOuButtonPresent() {
-        Assert.assertTrue(isElementPresent(By.cssSelector("[href='/logout']")), "Logout button is missing, login might have failed!");
+    public boolean isSignOutButtonPresent() { // Исправлено имя метода
+        return isElementPresent(By.cssSelector("[href='/logout']"));
     }
 
     public void clickOnLoginButton() {
@@ -95,19 +101,19 @@ public class TestBase {
         click(By.cssSelector("[href='/login']"));
     }
 
-    protected void verifyItemAddedToCart() {
-        Assert.assertEquals(isElementPresent(By.cssSelector(".cart-qty")), true);
+    public void verifyItemAddedToCart() {
+        Assert.assertTrue(isElementPresent(By.cssSelector(".cart-qty")), "Item was not added to cart");
     }
 
-    protected void clickAddItemToCart() {
+    public void clickAddItemToCart() {
         click(By.cssSelector("#add-to-cart-button-31"));
     }
 
-    protected void clickProductPage() {
+    public void clickProductPage() {
         click(By.cssSelector("img[src='https://demowebshop.tricentis.com/content/images/thumbs/0000224_141-inch-laptop_125.png']"));
     }
 
-    protected void verifyCartIsEmpty() {
+    public void verifyCartIsEmpty() {
         Assert.assertEquals(getEmptyCartMessage(), "Your Shopping Cart is empty!", "Cart should be empty after removing an item");
     }
 
@@ -118,15 +124,15 @@ public class TestBase {
         return emptyCartMessage.getText();
     }
 
-    protected void clickUpdateShoppingCartButton() {
-    click(By.cssSelector("[name='updatecart']"));
-}
+    public void clickUpdateShoppingCartButton() {
+        click(By.cssSelector("[name='updatecart']"));
+    }
 
-    protected void clickChekbox() {
-    click(By.cssSelector("[type=checkbox]"));
-}
+    public void clickCheckbox() { // Исправлено имя метода
+        click(By.cssSelector("[type=checkbox]"));
+    }
 
-    protected void clickShoppingCartLink() {
-    click(By.cssSelector(".cart-label"));
-}
+    public void clickShoppingCartLink() {
+        click(By.cssSelector(".cart-label"));
+    }
 }

@@ -21,12 +21,12 @@ public class AddItemToCartTests extends TestBase {
     @Test
     public void removeProductFromCart() {
         clickShoppingCartLink();
-        clickChekbox();
+        clickCheckbox();
         clickUpdateShoppingCartButton();
         verifyCartIsEmpty();
     }
 
-    @AfterMethod(enabled = false)
+    @AfterMethod
     public void postcondition() {
         clearCart();
     }

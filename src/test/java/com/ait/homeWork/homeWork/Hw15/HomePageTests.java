@@ -6,6 +6,6 @@ import org.testng.annotations.Test;
 public class HomePageTests extends TestBase {
     @Test
     public void isHomeComponentPresentTest() {
-        Assert.assertTrue(isHomeComponentPresent());
+        Assert.assertTrue(isHomeComponentPresent(), "Home component is not present!"); // Улучшено сообщение об ошибке
     }
 }

@@ -1,15 +1,20 @@
 package com.ait.homeWork.homeWork.Hw15;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CreateAccountTests extends TestBase {
 
     @Test
     public void createNewUserPositiveTest() {
-
         clickOnRegistrationLink();
-        fillRegistrationLoginForm("Ivan", "Bochkarev", "xor19@list.ru", "Qwerty12345!", "Qwerty12345!");
+        fillRegistrationLoginForm(new User()
+                .setFirstName("Ivan")
+                .setLastName("Bochkarev")
+                .setEmail("xor19@list.ru")
+                .setPassword("Qwerty12345!")
+                .setConfirmPassword("Qwerty12345!"));
         clickOnRegistrationButton();
-        isSignUpButtonPresent();
+        Assert.assertTrue(isSignUpButtonPresent(), "Sign Up button is missing"); // Исправлено
     }
 }
