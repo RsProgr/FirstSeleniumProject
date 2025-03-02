@@ -42,9 +42,4 @@ public class AddItemToCartTests extends TestBase {
     public void postcondition() {
         clearCart();
     }
-
-
-   
-
-
 }
