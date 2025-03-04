@@ -1,6 +1,5 @@
 package com.ait.homeWork.homeWork.Hw15;
 
-import com.homework.Hw15.models.TestBase;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

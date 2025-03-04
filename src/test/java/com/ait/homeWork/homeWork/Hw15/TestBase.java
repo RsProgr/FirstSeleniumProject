@@ -1,4 +1,4 @@
-package com.homework.Hw15.models;
+package com.ait.homeWork.homeWork.Hw15;
 
 import com.homework.Hw15.fw.ApplicationManager;
 
