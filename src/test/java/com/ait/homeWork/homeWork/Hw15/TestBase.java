@@ -92,11 +92,6 @@ public class TestBase {
         click(By.xpath("//input[@class='button-1 login-button']"));
     }
 
-    public void fillRegistrationLoginForm(String email, String password) {
-        type(By.name("Email"), email);
-        type(By.name("Password"), password);
-    }
-
     public void clickOnLoginLink() {
         click(By.cssSelector("[href='/login']"));
     }
