@@ -7,10 +7,11 @@ import org.testng.annotations.BeforeMethod;
 
 public class TestBase {
 
-    protected static ApplicationManager app = new ApplicationManager();
+    protected  ApplicationManager app;
 
     @BeforeMethod
     public void setUp() {
+        app = new ApplicationManager();
         app.init();
     }
 
