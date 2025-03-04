@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoky" verbose="1">
+    <test name="Smoky">
+        <classes>
+            <class name="com.ait.homeWork.homeWork.Hw15.HomePageTests"/>
+            <class name="com.ait.homeWork.homeWork.Hw15.LoginTests">
+                <methods>
+                    <exclude name=".*Negative.*"/>
+                </methods>
+            </class>
+            <class name="com.ait.homeWork.homeWork.Hw15.AddItemToCartTests"/>
+            <class name="com.ait.homeWork.homeWork.Hw15.CreateAccountTests">
+            </class>
+        </classes>
+    </test>
+</suite>
