@@ -1,4 +1,4 @@
-package com.ait.homeWork.homeWork.Hw15;
+package com.homework.Hw15.models;
 
 public class User{
     private String firstName;
