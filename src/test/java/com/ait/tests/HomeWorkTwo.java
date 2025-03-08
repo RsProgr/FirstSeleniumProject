@@ -3,7 +3,7 @@
 // где вы будете открывать страничку сайта
 //и находить там десять элементов по tagName, id и className
 
-package com.ait.homeWork.homeWork;
+package com.ait.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
