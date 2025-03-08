@@ -1,0 +1,7 @@
+22:40:55.333 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\Romka\AppData\Local\JetBrains\IdeaIC2024.1\temp-testng-customsuite.xml
+
+22:40:57.963 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- Start testloginPositiveTest
+22:41:08.299 [main] ERROR c.a.homeWork.homeWork.Hw15.TestBase -- FAILED:loginPositiveTestScreenshot: C:\QA\FirstSeleniumProject\screenshots\screen1741466468278.png
+22:41:08.299 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- Stop test
+22:41:08.299 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- *****************************************

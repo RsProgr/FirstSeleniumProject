@@ -1,0 +1,22 @@
+23:34:17.984 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\Romka\AppData\Local\JetBrains\IdeaIC2024.1\temp-testng-customsuite.xml
+
+23:34:21.139 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- Start testloginPositiveTest
+23:34:21.141 [main] INFO  com.homework.utils.MyListener -- Before find element -> By.cssSelector: [href='/login']
+23:34:21.216 [main] INFO  com.homework.utils.MyListener -- After find element ->By.cssSelector: [href='/login'] Log in
+23:34:21.608 [main] INFO  com.homework.utils.MyListener -- Before find element -> By.name: Email
+23:34:21.633 [main] INFO  com.homework.utils.MyListener -- After find element ->By.name: Email 
+23:34:21.694 [main] INFO  com.homework.utils.MyListener -- Before find element -> By.name: Email
+23:34:21.709 [main] INFO  com.homework.utils.MyListener -- After find element ->By.name: Email 
+23:34:21.784 [main] INFO  com.homework.utils.MyListener -- Before find element -> By.name: Password
+23:34:21.806 [main] INFO  com.homework.utils.MyListener -- After find element ->By.name: Password 
+23:34:21.864 [main] INFO  com.homework.utils.MyListener -- Before find element -> By.name: Password
+23:34:21.883 [main] INFO  com.homework.utils.MyListener -- After find element ->By.name: Password 
+23:34:21.946 [main] INFO  com.homework.utils.MyListener -- Before find element -> By.xpath: //input[@class='button-1 login-button']
+23:34:21.968 [main] INFO  com.homework.utils.MyListener -- After find element ->By.xpath: //input[@class='button-1 login-button'] 
+23:34:22.423 [main] INFO  com.homework.utils.MyListener -- Before find elements -> By.cssSelector: [href='/logout']
+23:34:22.478 [main] INFO  com.homework.utils.MyListener -- After find elements -> By.cssSelector: [href='/logout']
+23:34:22.479 [main] INFO  com.homework.utils.MyListener -- List size is1
+23:34:22.484 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- PASSED. loginPositiveTest
+23:34:22.485 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- Stop test
+23:34:22.485 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- *****************************************

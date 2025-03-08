@@ -1,0 +1,6 @@
+22:07:06.525 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\Romka\AppData\Local\JetBrains\IdeaIC2024.1\temp-testng-customsuite.xml
+
+22:07:09.024 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- Start testloginPositiveTest
+22:07:20.111 [main] ERROR c.a.homeWork.homeWork.Hw15.TestBase -- FAILED:loginPositiveTest
+22:07:20.111 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- Stop test

@@ -1,8 +1,10 @@
 package com.homework.Hw15.fw;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
+
+import java.io.File;
+import java.io.IOException;
 
 public class BaseHelper {
 
@@ -28,5 +30,16 @@ public class BaseHelper {
 
     public void click(By locator) {
         driver.findElement(locator).click();
+    }
+    public String takeScreenshot(){
+        File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = new File("screenshots/screen" + System.currentTimeMillis() + ".png");
+
+        try {
+            Files.copy(tmp,screenshot);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return screenshot.getAbsolutePath();
     }
 }

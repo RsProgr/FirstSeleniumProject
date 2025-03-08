@@ -1,0 +1,22 @@
+23:36:11.950 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\Romka\AppData\Local\JetBrains\IdeaIC2024.1\temp-testng-customsuite.xml
+
+23:36:14.928 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- Start testloginPositiveTest
+23:36:14.931 [main] INFO  com.homework.utils.MyListener -- Before find element -> By.cssSelector: [hre='/login']
+23:36:24.933 [main] INFO  com.homework.utils.MyListener -- The test has a problem
+23:36:24.933 [main] INFO  com.homework.utils.MyListener -- ***********************************************
+23:36:24.933 [main] INFO  com.homework.utils.MyListener -- Method -> findElement
+23:36:24.933 [main] INFO  com.homework.utils.MyListener -- ***********************************************
+23:36:24.933 [main] INFO  com.homework.utils.MyListener -- Target exception org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"[hre='/login']"}
+  (Session info: chrome=133.0.6943.143)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a259caefa49809d0c904a42a3ed3027a, findElement {value=[hre='/login'], using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.143, chrome: {chromedriverVersion: 133.0.6943.141 (2a5d6da0d61..., userDataDir: C:\Users\Romka\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60740}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60740/devtoo..., se:cdpVersion: 133.0.6943.143, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a259caefa49809d0c904a42a3ed3027a
+23:36:24.933 [main] INFO  com.homework.utils.MyListener -- **************************************************
+23:36:25.110 [main] ERROR c.a.homeWork.homeWork.Hw15.TestBase -- FAILED: loginPositiveTestScreenshot: C:\QA\FirstSeleniumProject\screenshots\screen1741469785094.png
+23:36:25.110 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- Stop test
+23:36:25.110 [main] INFO  c.a.homeWork.homeWork.Hw15.TestBase -- *****************************************
